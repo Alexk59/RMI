@@ -1,0 +1,27 @@
+<div class="form-group">
+  <div class="btn-group" dropdown>
+    <button
+      id="button-basic"
+      dropdownToggle
+      type="button"
+      class="btn btn-primary dropdown-toggle"
+      aria-controls="dropdown-basic"
+    >
+      - Area Code -<span class="caret"></span>
+    </button>
+    <ul
+      id="dropdown-basic"
+      *dropdownMenu
+      class="dropdown-menu"
+      role="menu"
+      aria-labelledby="button-basic"
+    >
+      <li role="menuitem" (click)="alert('asdfadf')">
+        <a class="dropdown-item">[US]+1.</a>
+      </li>
+      <li role="menuitem"><a class="dropdown-item">[MX]+52.</a></li>
+      <li role="menuitem"><a class="dropdown-item">[ES]+23.</a></li>
+    </ul>
+  </div>
+  <input type="number" class="form-control" />
+</div>

@@ -1,0 +1,135 @@
+<!-- <h1>DIRECTIVES</h1>
+<h1>NgIF</h1>
+<span *ngIf="showSpan" appHighlight> This is my conditional span</span>
+
+<br />
+<button *ngIf="showSpan === true" (click)="showSpan = false">Hide span</button>
+<button *ngIf="showSpan === false" (click)="showSpan = true">Show span</button>
+<br />
+======================================================
+<br />
+<h2>NgSwitch</h2>
+<ul [ngSwitch]="switchVal">
+  <li *ngSwitchCase="'a'">I'm the case A</li>
+  <li *ngSwitchCase="'b'">I'm the case B</li>
+  <li *ngSwitchCase="'c'">I'm the case C</li>
+  <li *ngSwitchDefault>I'm the case default</li>
+</ul>
+<button (click)="switchVal = 'd'">Show Default</button>
+<button (click)="switchVal = 'a'">Show A</button>
+<button (click)="switchVal = 'b'">Show B</button>
+<button (click)="switchVal = 'c'">Show C</button>
+<br />
+======================================================
+<br />
+<h1>Ng For</h1>
+<table>
+  <tr
+    *ngFor="
+      let user of myData;
+      first as isFirst;
+      last as isLast;
+      index as index
+    "
+  >
+    <td>{{ user.name }} /</td>
+    <td>{{ user.age }} / {{ isFirst }} / {{ isLast }} / {{ index }}</td>
+  </tr>
+</table>
+<button (click)="myData = [{ name: 'XXXX', age: '20' }]">Update data</button>
+<br />
+======================================================
+<br />
+<h1>NgClass</h1>
+<div class="bgRed" [class.bgYellow]="x > 5">This is a div</div>
+<div [ngClass]="{ bgYellow: x > 5, bgRed: x < 5, colorWhite: x > 5 }">
+  This is another div
+</div>
+<button (click)="x = 6">Change color</button>
+<br />
+======================================================
+<br />
+<h1>NgStyle</h1>
+<div style="color: white; background-color: red">This is a div</div>
+<div [ngStyle]="myStyle">This is a div</div>
+<button (click)="myStyle = { 'background-color': 'purple', color: 'white' }">
+  Change color
+</button>
+<br />
+======================================================
+<br />
+<h1>Custom Directive</h1>
+<div appHighlight>This is a custom div highlighted</div> -->
+
+<h1>EVENTS</h1>
+<button
+  type="button"
+  (click)="incrementValue(myInput)"
+  class="btn btn-outline-primary"
+>
+  Click ME
+</button>
+<br />
+<div class="custom-button">Button</div>
+<br />
+
+<input
+  type="text"
+  #myInput
+  value="25"
+  (keypress)="x = x + 1"
+  (blur)="x = x + 1"
+/>
+
+<input type="text" (keyup)="x = x + 1" (focus)="x = x + 1" />
+<h3>{{ x }}</h3>
+
+<h2>TEMPLATES</h2>
+
+<div>
+  <ul>
+    <ng-container *ngFor="let element of myData">
+      <li>
+        <ng-container
+          *ngTemplateOutlet="
+            fdsgdsgfds;
+            context: { data: element, x: '1231324' }
+          "
+        ></ng-container>
+      </li>
+    </ng-container>
+  </ul>
+  <ng-container>THIS IS A CONTAINER</ng-container>
+</div>
+<div>
+  <ng-container *ngTemplateOutlet="templateTest"></ng-container>
+</div>
+
+<ng-template #fdsgdsgfds let-user="data" let-newvar="x">
+  <span>New Var</span>{{ newvar }} <span>Name: </span
+  ><span>{{ user.name }}</span
+  ><br />
+  <span>Age: </span><span>{{ user.age }}</span
+  ><br />
+</ng-template>
+
+<h2>MODAL</h2>
+<button type="button" (click)="openModal()" class="btn btn-outline-primary">
+  Open Modal
+</button>
+
+<ng-template #templateModal>
+  <div class="modal-header">
+    <h5 class="modal-title">Modal title</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">Body</div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">
+      Close
+    </button>
+    <button type="button" class="btn btn-primary">Save</button>
+  </div>
+</ng-template>

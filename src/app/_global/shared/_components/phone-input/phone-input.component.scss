@@ -1,0 +1,23 @@
+input {
+  height: 38px;
+  width: 200px;
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  border-radius: 0px 4px 4px 0px;
+  outline: none;
+}
+input:focus {
+  box-shadow: none;
+}
+#button-basic {
+  border-radius: 4px 0px 0px 4px;
+  color: #494949;
+  background-color: #d3d3d3;
+  border-color: #c2c2c2;
+  border-right: 0px;
+  outline: none;
+}
+#button-basic:focus {
+  box-shadow: none;
+}

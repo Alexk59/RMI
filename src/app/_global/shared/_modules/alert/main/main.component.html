@@ -1,0 +1,11 @@
+<div
+  id="{{ options.id }}"
+  [ngStyle]="{
+    'background-color': options.backgroundColor,
+    color: options.fontColor
+  }"
+>
+  {{ options.text }}
+
+  <button (click)="close(options.id)">Close</button>
+</div>
