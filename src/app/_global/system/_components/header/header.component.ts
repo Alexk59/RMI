@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef, ViewChild } from "@angular/core";
-import { BsModalService } from "ngx-bootstrap/modal";
+import { BsModalService, BsModalRef } from "ngx-bootstrap/modal";
 
 @Component({
   selector: "app-header",
@@ -21,7 +21,9 @@ export class HeaderComponent implements OnInit {
   x = 1;
   myStyle = { "background-color": "black", color: "white" };
 
-  @ViewChild("templateModal", { static: true }) templateModal;
+  @ViewChild("templateModalViewChild", { static: true })
+  templateModal: TemplateRef<any>;
+  modalRef: BsModalRef;
 
   ngOnInit() {}
 
@@ -36,6 +38,10 @@ export class HeaderComponent implements OnInit {
   }
 
   openModal() {
-    this.modal.show(this.templateModal);
+    this.modalRef = this.modal.show(this.templateModal);
+  }
+
+  openModalParam(template: TemplateRef<any>) {
+    this.modalRef = this.modal.show(template);
   }
 }
