@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { ReactiveFormsModule } from "@angular/forms";
 
 import { AlertModule } from "./_modules/alert/alert.module";
 // import { AlertModule } from "ngx-bootstrap/alert";
@@ -17,6 +18,7 @@ import { PhoneInputComponent } from "./_components/phone-input/phone-input.compo
     BsDropdownModule.forRoot(),
     ModalModule.forRoot(),
     AlertModule,
+    ReactiveFormsModule,
   ],
   exports: [
     AlertModule,
@@ -24,6 +26,7 @@ import { PhoneInputComponent } from "./_components/phone-input/phone-input.compo
     ModalModule,
     BsDropdownModule,
     PhoneInputComponent,
+    ReactiveFormsModule,
   ],
 })
 export class SharedModule {}

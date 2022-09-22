@@ -6,6 +6,7 @@ import { SidebarComponent } from "./_components/sidebar/sidebar.component";
 import { HeaderComponent } from "./_components/header/header.component";
 import { FooterComponent } from "./_components/footer/footer.component";
 import { MainComponent } from "./_components/main/main.component";
+import { FormsComponent } from './_components/forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { MainComponent } from "./_components/main/main.component";
     FooterComponent,
     MainComponent,
     HighlightDirective,
+    FormsComponent,
   ],
   imports: [CommonModule, SharedModule],
   exports: [MainComponent],
