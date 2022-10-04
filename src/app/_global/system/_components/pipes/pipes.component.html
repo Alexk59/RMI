@@ -1,0 +1,18 @@
+<h2>PIPES</h2>
+
+<span>{{ name | lowercase }}</span
+><br />
+<span [innerHtml]="name | uppercase"></span>
+<br />
+<span>{{ name | titlecase }}</span>
+<br />
+<span>{{ 200.5 | currency }}</span>
+<br />
+<span>{{ date | date: "yyyy MM dd hh:mm:ss" }}</span>
+<br />
+<span>{{
+  "asdfuas9d8f6a7s6d5fta8s7d6fas87d6fas7df6aosdfy" | letters: "numbers"
+}}</span>
+<br />
+<!-- <p [innerHtml]="description | shorttext: 100"></p> -->
+<p>{{ description | shorttext: 100 }}</p>
